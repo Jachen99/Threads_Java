@@ -1,0 +1,62 @@
+1、单例：某个类有且只有唯一的对象
+2、单例类的写法有两大类：
+（1）饿汉式单例类：无论你是否需要这个对象，都直接提前创建好这个唯一的对象
+public enum SingleOne{
+    INSTANCE
+}
+优点：简单
+缺点：SingleOne不能定义自己的父类和子类
+
+public class SingleTwo{
+    public static final SingleTwo INSTANCE = new SingleTwo();
+    private SingleTwo(){}
+}
+
+public class SingleThree{
+    private static final SingleThree INSTANCE = new SingleThree();
+    private SingleThree();
+    public static SingleThree getInstance(){
+        return INSTANCE;
+    }
+}
+
+（2）懒汉式：只有你来拿这个对象，我才创建对象，否则不提前创建
+
+public class SingleFour {
+    private static SingleFour instance;
+    //这个静态变量的作用是记录这个类的唯一对象，这个对象这里还没new
+
+    private SingleFour(){
+
+    }
+
+    public static synchronized SingleFour getInstance(){
+        if(instance == null) {
+            instance = new SingleFour();
+        }
+        return instance;
+    }
+}
+
+public class SingleFive {
+    private SingleFive(){}
+
+    //静态内部类
+    private static class Inner{
+        static SingleFive instance = new SingleFive();
+    }
+
+    //再外部类调用这个方法时，才会对内部类进行初始化，所以instance对象的创建仍然是获取对象时创建
+    //而不是在外部类初始化时创建，所以仍然是懒汉式
+    public static SingleFive getInstance(){
+        return Inner.instance;
+    }
+
+}
+
+面试题：高频
+请写出一个单例类？（5种当中任意一种都可以）
+请写出一个饿汉式单例类（3种当中选择一种）
+请写出一个懒汉式单例类（2种当中选择一种）
+请写出一个单例类，并用不同的写法完成（至少2种）
+
