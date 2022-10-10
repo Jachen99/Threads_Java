@@ -1,4 +1,4 @@
-package the_advanced.consumers_producers.ones_one;
+package the_advanced.consumers_producers.ones_ones;
 
 //服务员：取菜
 public class Waiter extends Thread{
