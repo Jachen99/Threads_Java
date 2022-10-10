@@ -1,4 +1,4 @@
-package the_advanced.consumers_producers.ones_one;
+package the_advanced.consumers_producers.ones_ones;
 
 public class TestWorkbench {
     public static void main(String[] args) {
