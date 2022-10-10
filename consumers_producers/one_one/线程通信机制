@@ -27,8 +27,3 @@ SE阶段：
 （2）等待唤醒问题 ==> 通信wait,notify
     wait,notity,notifyAll方法都必须由“同步锁”对象调用，
     否则会发生IllegalMonitorStateException
-
-3、演示
-陈前觉得学Java太难了，放弃了，但是看到尚硅谷学生很多，就租了小门脸，
-开始卖快餐。陈前和他女朋友一起创业。
-小门脸一开始比较小，工作台上只能放5份菜。
