@@ -1,4 +1,4 @@
-package the_advanced.consumers_producers.ones_one;
+package the_advanced.consumers_producers.ones_ones;
 
 //厨师：做菜
 public class Cook extends Thread {
